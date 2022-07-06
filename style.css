@@ -1,0 +1,138 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+nav, main {
+  transition: 0.2s;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  background-color: rgb(241, 182, 93);
+  color: white;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 3rem;
+} 
+
+main {
+  background-color: rgb(251, 218, 186) ;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+#add-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  box-shadow: 5px 5px black;
+  border-radius: .5rem;
+}
+
+#add-book button {
+  height: 30%;
+  width: 200px;
+  background-color: rgb(241, 182, 93) ;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  transition-duration: 0.4s;
+}
+
+#add-book button:hover {
+  color: white;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#book-list {
+  background-color: rgb(255, 255, 255);
+  margin: 1rem;
+  padding: 1.5rem;
+  border: 3px solid rgb(37, 37, 37);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: .5rem;
+}
+
+.book {
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  height: 1fr;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: .5rem;
+}
+
+.book p {
+  margin: 0;
+  text-align: center;
+}
+
+form {
+  position: fixed;
+  height: 500px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  background-color: white;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+form div {
+  grid-column: 1/2 ;
+  display: flex;
+  flex-direction: column;  
+}
+
+label {
+  text-align: start;
+  font-size: 1.2rem;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  border-radius: .5rem;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+}
+
+button[type=submit] {
+  background-color: rgb(241, 182, 93) ;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.blurred {
+  filter: blur(4px);
+}
