@@ -23,17 +23,28 @@ bookButton.addEventListener('click', function() {
   mainContent.classList.add('blurred')
 })
 
+// Create a constructor to build our books
+function Book(title, author, genre, pageCount) {
+  this.title = title || '';
+  this.author = author || '';
+  this.genre = genre || '';
+  this.pageCount = pageCount || 0;
+}
+
 form.addEventListener('submit', (e) => {
   // Stops the browser from redirecting to another page once submitted
   e.preventDefault();
 
-  const book = {
-    title: document.getElementById('book-title').value,
-    author: document.getElementById('author').value,
-    genre: document.getElementById('genre').value,
-    pageCount: document.getElementById('page-count').value
-  }
-  
+  // Gather all the data needed to create the book;
+  const title = document.getElementById('book-title').value;
+  const author =  document.getElementById('author').value;
+  const genre = document.getElementById('genre').value
+  const pageCount = document.getElementById('page-count').value
+
+  // Create a new book using the Book constuctor
+  const book = new Book(title, author, genre, pageCount);
+
+  // Create an element that's going to represent the book
   const bookDiv = document.createElement('div') 
   bookDiv.classList.add('book')
 
@@ -49,9 +60,10 @@ form.addEventListener('submit', (e) => {
   bookList.appendChild(bookDiv)
 
   // Clear all the entered form data
-  for (const property in book) {
-    book[property] = ''
-  }
+  const allInputs = document.querySelectorAll('input')
+  allInputs.forEach(input => {
+    input.value = ''
+  });
 
   // Hide the form and unblur the background
   form.style.display = 'none';

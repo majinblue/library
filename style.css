@@ -131,6 +131,13 @@ button[type=submit] {
   border-radius: .5rem;
   font-size: 1.5rem;
   font-weight: bold;
+  transition: 0.4s;
+}
+
+button[type=submit]:hover {
+  cursor: pointer;
+  color: white;
+  box-shadow: none;
 }
 
 .blurred {
